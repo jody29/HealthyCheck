@@ -38,7 +38,7 @@ const detect = async () => {
                      const product = {
                         name: result.product.product_name,
                         brand: result.product.brand_owner ? result.product.brand_owner : '',
-                        img: result.product.image_front_thumb_url,
+                        img: result.product.image_front_url,
                         nutriments: result.product.nutriments
                      }
 
@@ -49,26 +49,23 @@ const detect = async () => {
                      console.log(product)
 
                      const markup = `
-                     <img src=${product.img}/>
+                     <img src=${product.img} alt='${product.name}'/>
                      <h2>${product.name}</h2>
                      <ul class='nutrimentList'>
                         
                      </ul>
                      `
 
-                     let nutriments = document.querySelector('.nutrimentList')
-                     const addNutriments = async () => {
-                        for (const [key, value] of Object.entries(nutrimentList)) {
-                           let listItem = document.createElement('li')
-                           listItem.innerHTML = `${key}: ${value}`
-                           nutriments.appendChild(listItem)
-                        }
+                     const nutriments = document.querySelector('.kcalList')
 
+                     for (const [key, value] of Object.entries(nutrimentList)) {
+                        let listItem = document.createElement('li')
+                        listItem.innerHTML = `${key}: ${value}`
+
+                        nutriments.appendChild(listItem)
                      }
 
-                     
-
-                     document.querySelector('section:first-of-type').innerHTML = markup
+                     document.querySelector('main section:first-of-type').innerHTML = markup
                   })
                   .catch(error => document.body.insertAdjacentHTML('beforebegin', error))
                }
