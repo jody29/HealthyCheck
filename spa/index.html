@@ -16,22 +16,27 @@
 
         <section>
 
-            <h2>Scan Product</h2>
-            <section id="container">
-                <ul id="barcode-list"></ul>
+            <h2>Scan a product for info</h2>
+            <section id="container" >
+                <ul id="barcode-list" class="hidden"></ul>
+            </section>
+            <button class="scanButton">
+                Scan barcode
+            </button>
+            <section class="iosWarning">
+                <p>IOS does not support barcode scanner</p>
+                <p>Try filling in the barcode manually</p>
             </section>
 
             <p>or</p>
 
-            <h3>Fill in manually</h3>
+            <h2>Fill in manually</h2>
             <form action="">
                 <input type="text">
                 <input type="submit">
             </form>
 
         </section>
-
-        <ul class="kcalList">
             
         </ul>
 

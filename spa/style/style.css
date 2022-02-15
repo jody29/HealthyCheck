@@ -9,7 +9,7 @@ html {
 body {
     margin: 0;
     width: 100vw;
-    height: 100%;
+    height: 100vh;
     background-color: white;
 }
 
@@ -18,12 +18,33 @@ h1 {
     display: flex;
     justify-content: center;
     font-family: sans-serif;
-    /* background-color: #25DB30; */
     background: linear-gradient(rgb(96, 219, 47), rgb(19, 146, 14));
-    /* border-radius: 0 0 1em 1em; */
     color: white;
     margin: 0;
     padding: 1em 0 1em 0;
+}
+
+h2 {
+    color: rgb(138, 138, 138);
+    font-size: 1.8em;
+}
+
+h3 {
+    color: #25DB30;
+    display: flex;
+    width: 100%;
+    justify-content: flex-start;
+    font-size: 1.7em;
+}
+
+h4 {
+    display: flex;
+    width: 100%;
+    justify-content: flex-start;
+    margin-bottom: 0;
+    margin-top: 0;
+    font-size: 1.2em;
+    color: rgb(100, 100, 100)
 }
 
 section:first-of-type {
@@ -43,6 +64,10 @@ section:first-of-type p {
     justify-content: center;
     align-items: center;
 
+}
+
+section:first-of-type img {
+    width: 100%;
 }
 
 section:first-of-type p::before {
@@ -67,6 +92,7 @@ section:first-of-type p::after {
     width: 100%;
     z-index: 0;
     position: relative;
+    border-radius: .5em;
 }
 
 #container {
@@ -106,23 +132,73 @@ section:first-of-type img {
     position: absolute;
     background-image: url('../img/barcode_bg_Tekengebied\ 1.png');
     content: '';
+    border-radius: .5em;
+}
+
+button {
+    width: 100%;
+    height: 7.5em;
+    /* background: linear-gradient(rgb(96, 219, 47), rgb(19, 146, 14)); */
+    border: 0;
+    box-shadow: 0px 0px 5px gray;
+    background-color: white;
+    color: white;
+    font-size: 2em;
+    margin-top: -.5em;
+    border-radius: .5em;
+    margin-bottom: 1em;
+    border: 3px solid #25DB30;
+    color: #25DB30;
+}
+
+.hidden {
+    display: none;
+}
+
+#container video {
+    width: 100%;
 }
 
 #barcode-list {
     display: none;
 }
 
-.kcalList {
+.iosWarning {
+    display: none;
+}
+
+.nutriments {
+    list-style: none;
+    width: 100%;
     display: flex;
     flex-direction: column;
-    height: 22em;
-    width: 90%;
-    flex-wrap: wrap;
-    list-style: none;
-    align-items: flex-end;
     padding: 0;
-    margin-top: 0;
-    margin-bottom: 0;
+}
+
+@supports (-webkit-touch-callout: none) {
+    .iosWarning {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 2em;
+        border: 1px solid #25DB30;
+        margin-top: -1.5em;
+    }
+    
+    .iosWarning p:first-of-type::before, p:nth-of-type(2)::before {
+        width: 0!important;
+        height: 0!important;
+    }
+    
+    .iosWarning p:first-of-type::after, p:nth-of-type(2)::after {
+        width: 0!important;
+        height: 0!important;
+    }
+
+    button {
+        display: none;
+    }
 }
 
 
