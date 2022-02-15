@@ -31,15 +31,38 @@ const detect = async () => {
                   const url = `https://world.openfoodfacts.org/api/v0/product/${newBarcode}.json`
                   display.innerHTML = `
                   <section>
-                     <svg width='135%' height='90vh'>
-                     <rect width='100%' height='22em' fill='rgb(200,200,200)' />
-                     <rect y='30em width='20%' height='2em'/>
+                     <svg width='140%' height='90vh' class='loadSkeleton'>
+                        <defs>
+                           <linearGradient id='gradient' x1='50%' y1='0%' x2='50%' y2='100%'>
+                              <stop offset='0%' stop-color='rgb(200,200,200)'>
+                                 <animate attributeName='stop-color' values='rgb(150,150,150); rgb(100, 100, 100); rgb(200, 200, 200)'
+                                 dur='4s' repeatCount='indefinite'
+                                 ></animate>
+                              </stop>
+                              <stop offset='100%' stop-color='rgb(100,100,100')>
+                                 <animate attributeName='stop-color' values='rgb(240, 240, 240); rgb(170,170,170); rgb(130,130,130)'
+                                 dur='4s' repeatCount='indefinite'
+                                 ></animate>
+                              </stop>
+                           </linearGradient>
+                        </defs>
+                        <g fill='url('#gradient')'>
+                           <rect width='100%' height='22em' />
+                           <rect transform='translate(20, 375)' width='30%' height='2em' />
+                           <rect transform='translate(20, 440)' width='30%' height='1.5em' />
+                           <rect transform='translate(20, 470)' width='25%' height='1em' />
+                           <rect transform='translate(20, 490)' width='25%' height='1em' />
+                           <rect transform='translate(20, 510)' width='25%' height='1em' />
+                           <rect transform='translate(20, 530)' width='25%' height='1em' />
+                        </g>
                      </svg>
                   </section>
                   `
                   
                   fetch(url)
-                  .then(result => result.json())
+                  .then(result => {
+                     return result.status >= 200 && result.status <= 299 ? result.json() : console.log('error')
+                  })
                   .then(result => {
                      console.log(result.product)
 
@@ -81,8 +104,10 @@ const detect = async () => {
                      }
 
                      document.querySelector('main section:first-of-type').innerHTML = markup
+                     video.remove()
+                     video.autoplay = false
                   })
-                  .catch(error => document.body.insertAdjacentHTML('beforebegin', error))
+                  .catch(error => console.log(error))
                }
             })
          })
