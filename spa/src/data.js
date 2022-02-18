@@ -76,11 +76,9 @@ const detect = async () => {
                         <li>Fat: ${product.nutriments['fat_100g']}g</li>
                         <li>Fibers: ${product.nutriments['fiber_100g']}g</li>
                         <li>Proteins: ${product.nutriments['proteins_100g']}g</li>
-                        <li>Satls: ${product.nutriments['salt_100g']}g</li>
+                        <li>Salts: ${product.nutriments['salt_100g']}g</li>
                         <li>Sugars: ${product.nutriments['fat_100g']}g</li>
-
                      </ul>   
-                     
                      `
 
                      for (const [key, value] of Object.entries(nutrimentList)) {
