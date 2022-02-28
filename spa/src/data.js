@@ -1,3 +1,5 @@
+import { getData } from './modules/getData.js'
+
 let scanButton = document.querySelector('.scanButton')
 let video = document.createElement('video')
 let display = document.querySelector('section:first-of-type')
@@ -32,64 +34,19 @@ const detect = async () => {
                   display.innerHTML = `
                   <section>
                      <svg width='140%' height='90vh' class='loadSkeleton' fill='rgb(150,150,150)'>
-                           <rect width='100%' height='22em' />
-                           <rect transform='translate(20, 375)' width='30%' height='2em' />
-                           <rect transform='translate(20, 440)' width='30%' height='1.5em' />
-                           <rect transform='translate(20, 470)' width='25%' height='1em' />
-                           <rect transform='translate(20, 490)' width='25%' height='1em' />
-                           <rect transform='translate(20, 510)' width='25%' height='1em' />
-                           <rect transform='translate(20, 530)' width='25%' height='1em' />
+                        <rect width='100%' height='22em' />
+                        <rect transform='translate(20, 375)' width='30%' height='2em' />
+                        <rect transform='translate(20, 440)' width='30%' height='1.5em' />
+                        <rect transform='translate(20, 470)' width='25%' height='1em' />
+                        <rect transform='translate(20, 490)' width='25%' height='1em' />
+                        <rect transform='translate(20, 510)' width='25%' height='1em' />
+                        <rect transform='translate(20, 530)' width='25%' height='1em' />
                      </svg>
                   </section>
                   `
                   
-                  fetch(url)
-                  .then(result => {
-                     return result.status >= 200 && result.status <= 299 ? result.json() : console.log('error')
-                  })
-                  .then(result => {
-                     console.log(result.product)
-
-                     display.innerHTML = ''
-
-                     const product = {
-                        name: result.product.product_name,
-                        brand: result.product.brand_owner ? result.product.brand_owner : '',
-                        img: result.product.image_front_url,
-                        nutriments: result.product.nutriments
-                     }
-
-                     let nutrimentList = product.nutriments
-
-                     console.log(nutrimentList)
-
-                     console.log(product)
-
-                     const markup = `
-                     <img src=${product.img} alt='${product.name}'/>
-                     <h3>${product.name}</h3>
-                     <h4>Nutriments per 100g</h4>
-                     <ul class='nutriments'>
-                        <li>Caffeine: ${product.nutriments['caffeine_100g']}mg</li>
-                        <li>Carbohydrates: ${product.nutriments['carbohydrates_100g']}g</li>
-                        <li>Calories: ${product.nutriments['energy-kcal_100g']}kcal</li>
-                        <li>Fat: ${product.nutriments['fat_100g']}g</li>
-                        <li>Fibers: ${product.nutriments['fiber_100g']}g</li>
-                        <li>Proteins: ${product.nutriments['proteins_100g']}g</li>
-                        <li>Salts: ${product.nutriments['salt_100g']}g</li>
-                        <li>Sugars: ${product.nutriments['fat_100g']}g</li>
-                     </ul>   
-                     `
-
-                     for (const [key, value] of Object.entries(nutrimentList)) {
-                        console.log(`${key}: ${value}`)
-                     }
-
-                     document.querySelector('main section:first-of-type').innerHTML = markup
-                     video.remove()
-                     video.autoplay = false
-                  })
-                  .catch(error => console.log(error))
+                  getData(video, url, display)
+                  
                }
             })
          })
