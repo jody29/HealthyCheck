@@ -1,15 +1,18 @@
 import { getData } from "./getData.js"
 
 export const checkBarcode = (itemsFound, video, display, barcode, list) => {
-    if (!itemsFound.includes(barcode.rawValue)) {
-        itemsFound.push(barcode.rawValue)
-        const li = document.createElement('li')
-        li.innerHTML = barcode.rawValue
-        const newBarcode = barcode.rawValue
-        list.appendChild(li)
+    if (!itemsFound.includes(barcode.rawValue)) { // Check if the itemsFound array does not allready include the barcode value
+        itemsFound.push(barcode.rawValue) // if not the case, then add the barcode value to the array
+        const li = document.createElement('li') // create a list item
+        li.innerHTML = barcode.rawValue // barcode value will be assigned to the list item
+        const newBarcode = barcode.rawValue // create variable for the barcode value
+        list.appendChild(li) // list item will be added to the list
 
+        // API url
         const url = `https://world.openfoodfacts.org/api/v0/product/${newBarcode}.json`
-        display.innerHTML = `
+
+        // Loading screen
+        display.innerHTML = ` 
         <section>
            <svg width='140%' height='90vh' class='loadSkeleton' fill='rgb(150,150,150)'>
               <rect width='100%' height='22em' />
@@ -23,7 +26,8 @@ export const checkBarcode = (itemsFound, video, display, barcode, list) => {
         </section>
         `
 
-        getData(video, url, display)
+        // Get data from the API
+        getData(video, url, display) 
         
      }
 }

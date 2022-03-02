@@ -1,12 +1,13 @@
 export const renderData = (result) => {
-    
+
     const product = {
-        name: result.product.product_name,
+        name: result.product.product_name, // assigning values to properties of this object
         brand: result.product.brand_owner ? result.product.brand_owner : '',
         img: result.product.image_front_url,
         nutriments: result.product.nutriments
     }
 
+    // render the data
     const markup = `
         <img src=${product.img} alt='${product.name}'/>
         <h3>${product.name}</h3>
@@ -23,5 +24,5 @@ export const renderData = (result) => {
         </ul>   
     `
 
-    document.querySelector('main section:first-of-type').innerHTML = markup
+    document.querySelector('main section:first-of-type').innerHTML = markup // first section in the main gets the information about the product
 }
