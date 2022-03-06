@@ -14,7 +14,7 @@ export const getData = (video, url, display) => {
             video.remove() // when there is a result, remove the video element
             video.autoplay = false // stop playing the video
         })
-        .catch(error => console.log(error))
+        .catch(error => display.innerHTML = error)
 
 }
 

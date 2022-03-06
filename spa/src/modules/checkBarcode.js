@@ -11,8 +11,7 @@ export const checkBarcode = (itemsFound, video, display, barcode, list) => {
         // API url
         const url = `https://world.openfoodfacts.org/api/v0/product/${newBarcode}.json`
 
-        // Loading screen
-        display.innerHTML = ` 
+        const loadingScreen = ` 
         <section>
            <svg width='140%' height='90vh' class='loadSkeleton' fill='rgb(150,150,150)'>
               <rect width='100%' height='22em' />
@@ -25,6 +24,9 @@ export const checkBarcode = (itemsFound, video, display, barcode, list) => {
            </svg>
         </section>
         `
+
+        // Loading screen
+        display.innerHTML = loadingScreen
 
         // Get data from the API
         getData(video, url, display) 

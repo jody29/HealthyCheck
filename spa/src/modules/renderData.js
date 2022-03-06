@@ -13,16 +13,17 @@ export const renderData = (result) => {
         <h3>${product.name}</h3>
         <h4>Nutriments per 100g</h4>
         <ul class='nutriments'>
-            <li>Caffeine: ${product.nutriments['caffeine_100g']}mg</li>
-            <li>Carbohydrates: ${product.nutriments['carbohydrates_100g']}g</li>
-            <li>Calories: ${product.nutriments['energy-kcal_100g']}kcal</li>
-            <li>Fat: ${product.nutriments['fat_100g']}g</li>
-            <li>Fibers: ${product.nutriments['fiber_100g']}g</li>
-            <li>Proteins: ${product.nutriments['proteins_100g']}g</li>
-            <li>Salts: ${product.nutriments['salt_100g']}g</li>
-            <li>Sugars: ${product.nutriments['fat_100g']}g</li>
-        </ul>   
+            <li>Caffeine: ${ product.nutriments['caffeine_100g'] ? product.nutriments['caffeine_100g'] : '0'}mg</li>
+            <li>Carbohydrates: ${product.nutriments['carbohydrates_100g'] ? product.nutriments['carbohydrates_100g'] : '0'}g</li>
+            <li>Calories: ${product.nutriments['energy-kcal_100g'] ? product.nutriments['energy-kcal_100g'] : '0'}kcal</li>
+            <li>Fat: ${product.nutriments['fat_100g'] ? product.nutriments['fat_100g'] : '0'}g</li>
+            <li>Fibers: ${product.nutriments['fiber_100g'] ? product.nutriments['fiber_100g'] : '0'}g</li>
+            <li>Proteins: ${product.nutriments['proteins_100g'] ? product.nutriments['proteins_100g'] : '0'}g</li>
+            <li>Salts: ${product.nutriments['salt_100g'] ? product.nutriments['salt_100g'] : '0'}g</li>
+            <li>Sugars: ${product.nutriments['fat_100g'] ? product.nutriments['fat_100g'] : '0'}g</li>
+        </ul>
+        <a href='index.html' class='newProduct'>Scan new product</a>   
     `
 
-    document.querySelector('main section:first-of-type').innerHTML = markup // first section in the main gets the information about the product
+    document.querySelector('main section:first-of-type').insertAdjacentHTML('beforeend', markup) // first section in the main gets the information about the product
 }
