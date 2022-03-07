@@ -53,6 +53,8 @@ section:first-of-type {
     align-items: center;
     padding: 0 1.5em;
     margin-bottom: 0;
+    height: 100%;
+    background-color: white;
 }
 
 section:first-of-type p {
@@ -108,8 +110,9 @@ section {
 }
 
 section:first-of-type img {
-    width: 115%;
+    width: 100vw;
     height: 22em;
+    display: inline-flex;
     object-fit: cover;
 }
 
@@ -149,7 +152,6 @@ button {
     margin-bottom: 1em;
     border: 3px solid #25DB30;
     color: #25DB30;
-    background-color: rgb(211, 255, 210);
 }
 
 form {
@@ -163,14 +165,27 @@ input[type='number'] {
     padding: 1em;
     border: none;
     border-radius: 1em 0 0 1em;
-    background-color: rgb(211, 255, 210);
+    background-color: rgb(231, 231, 231);
 }
 
 input[type='number']:focus {
-    outline: 1px solid #25DB30!important;
+    outline: 1px solid #25DB30;
     outline: none;
     width: 100%;
     background-color: rgb(211, 255, 210);
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  -webkit-text-fill-color: black;
+  transition: background-color 5000s ease-in-out 0s;
 }
 
 input[type='submit'] {
@@ -216,9 +231,26 @@ input[type='submit'] {
     text-decoration: none;
     display: flex;
     justify-content: center;
-    width: 90%;
-    position: absolute;
-    bottom: 1.5em;
+    width: 100%;
+    margin-top: 5.5em;
+    margin-bottom: 1.5em;
+}
+
+span {
+    margin-top: -1em;
+}
+
+.try {
+    color: white;
+    background: linear-gradient(rgb(96, 219, 47), rgb(19, 146, 14));
+    border-radius: 1em;
+    padding: 1em;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 2em;
+    margin-bottom: 1.5em; 
 }
 
 @supports (-webkit-touch-callout: none) {

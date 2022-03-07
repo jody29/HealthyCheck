@@ -10,6 +10,8 @@ export const detect = async (itemsFound ,video, display, list) => {
     video.autoplay = true // video will play automaticly
  
     list.before(video)
+
+    
  
     const render = () => {
        barcodeDetector // call the barcodeDetector
@@ -21,10 +23,13 @@ export const detect = async (itemsFound ,video, display, list) => {
           })
           .catch(console.error)
     }
+
+    
  
     (function renderLoop() {
        requestAnimationFrame(renderLoop)
        render()
     })()
+   
  
 }
