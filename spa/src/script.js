@@ -11,6 +11,3 @@ scanButton.addEventListener('click', () => {
    detect(itemsFound ,video, display, list)
    scanButton.classList.add('hidden')
 })
-
-
-

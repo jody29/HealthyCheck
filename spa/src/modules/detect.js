@@ -2,8 +2,6 @@ import { checkBarcode } from "./checkBarcode.js"
 
 export const detect = async (itemsFound ,video, display, list) => {
     const barcodeDetector = new BarcodeDetector() // create a new barcode detector
-    const list = document.querySelector('#barcode-list')
-    let itemsFound = []
     const mediaStream = await navigator.mediaDevices.getUserMedia({ // prompts the user for permission to use the face camera
        video: {facingMode: "environment"}
     })
