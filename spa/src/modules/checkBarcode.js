@@ -1,7 +1,7 @@
 import { getData } from "./getData.js"
 import { loadingScreen } from "../utils/loader.js"
 
-export const checkBarcode = (itemsFound, video, display, barcode, list, value) => {
+export const checkBarcode = (itemsFound, video, display, barcode, list) => {
     if (!itemsFound.includes(barcode.rawValue || barcode)) { // Check if the itemsFound array does not allready include the barcode value
         itemsFound.push(barcode.rawValue || barcode) // if not the case, then add the barcode value to the array
         const li = document.createElement('li') // create a list item

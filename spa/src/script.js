@@ -1,5 +1,5 @@
 import { detect } from './modules/detect.js'
-import { validateForm } from './modules/validateForm.js'
+import { checkBarcode } from './modules/checkBarcode.js'
 
 const list = document.querySelector('#barcode-list')
 const form = document.forms['checkBarcode']
@@ -16,7 +16,7 @@ scanButton.addEventListener('click', () => {
 
 form.addEventListener('submit', (e) => {
    e.preventDefault()
-   console.log('test')
-   
-   validateForm(itemsFound, video, display, form['barcode'].value, list)
+
+   checkBarcode(itemsFound, video, display, form['barcode'].value, list)
+
 })

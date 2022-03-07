@@ -143,39 +143,44 @@ button {
     background-color: white;
     color: white;
     font-size: 2em;
+    font-weight: bold;
     margin-top: -.5em;
     border-radius: .5em;
     margin-bottom: 1em;
     border: 3px solid #25DB30;
     color: #25DB30;
+    background-color: rgb(211, 255, 210);
 }
 
 form {
     display: flex;
+    height: 100%;
     width: 100%;
-    flex-direction: column;
 }
 
 input[type='number'] {
     width: 100%;
     padding: 1em;
-    border-radius: 1em;
+    border: none;
+    border-radius: 1em 0 0 1em;
+    background-color: rgb(211, 255, 210);
 }
 
 input[type='number']:focus {
-    border: 2px solid #25DB30!important;
+    outline: 1px solid #25DB30!important;
     outline: none;
+    width: 100%;
+    background-color: rgb(211, 255, 210);
 }
 
 input[type='submit'] {
-    padding: 1em;
-    width: fit-content;
+    border-radius: 0 1em 1em 0;
     margin-left: auto;
-    margin-top: .5em;
-    border-radius: 3em;
     background: linear-gradient(rgb(96, 219, 47), rgb(19, 146, 14));
     color: white;
     border: 0;
+    padding: 1em;
+    height: 100%;
     font-weight: bold;
 }
 
@@ -206,9 +211,14 @@ input[type='submit'] {
 .newProduct {
     color: white;
     background: linear-gradient(rgb(96, 219, 47), rgb(19, 146, 14));
-    border-radius: 3em;
+    border-radius: 1em;
     padding: 1em;
     text-decoration: none;
+    display: flex;
+    justify-content: center;
+    width: 90%;
+    position: absolute;
+    bottom: 1.5em;
 }
 
 @supports (-webkit-touch-callout: none) {
