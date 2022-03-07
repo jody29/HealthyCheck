@@ -1,6 +1,6 @@
 import { checkBarcode } from "./checkBarcode.js"
 
-export const detect = async (video, display) => {
+export const detect = async (itemsFound ,video, display, list) => {
     const barcodeDetector = new BarcodeDetector() // create a new barcode detector
     const list = document.querySelector('#barcode-list')
     let itemsFound = []

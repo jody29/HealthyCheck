@@ -22,8 +22,10 @@ export const renderData = (result) => {
             <li>Salts: ${product.nutriments['salt_100g'] ? product.nutriments['salt_100g'] : '0'}g</li>
             <li>Sugars: ${product.nutriments['fat_100g'] ? product.nutriments['fat_100g'] : '0'}g</li>
         </ul>
-        <a href='index.html' class='newProduct'>Scan new product</a>   
+        <a href='' class='newProduct'>Scan new product</a>   
     `
 
     document.querySelector('main section:first-of-type').insertAdjacentHTML('beforeend', markup) // first section in the main gets the information about the product
+
+    document.querySelector('.newProduct').addEventListener('click', () => { window.history.back() })
 }
