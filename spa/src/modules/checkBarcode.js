@@ -11,16 +11,11 @@ export const checkBarcode = (itemsFound, video, display, barcode, list) => {
 
         console.log(newBarcode)
 
-        // API url
-        const url = `https://world.openfoodfacts.org/api/v0/product/${newBarcode}.json`
-
-        console.log(url)
-
         // Loading screen
         display.innerHTML = loadingScreen
 
         // Get data from the API
-        getData(video, url, display) 
+        getData(video, newBarcode, display) 
         
      }
 }

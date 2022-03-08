@@ -1,17 +1,19 @@
 import { renderData } from "./renderData.js" 
 import { errorProduct } from "../utils/error.js"
 
-export const getData = (video, url, display) => {
+export const getData = (video, barcode, display) => {
+
+    // API url
+    const url = `https://world.openfoodfacts.org/api/v0/product/${barcode}.json`
 
     fetch(url)
         .then(result => {
-            console.log(result.status)
-            return result.status >= 200 && result.status <= 299 ? result.json() : console.log('not found') // check if there is not a error state in the result
+            return result.status >= 200 && result.status <= 299 ? result.json() : Promise.reject(result)
         })
         .then(result => {
             display.innerHTML = '' // loading event is over
 
-            renderData(result) // function to render the data
+            renderData(result, display) // function to render the data
 
             video.remove() // when there is a result, remove the video element
             video.autoplay = false // stop playing the video

@@ -1,4 +1,6 @@
-export const renderData = (result) => {
+export const renderData = (result, display) => {
+
+    const link = document.querySelector('.newProduct')
 
     const product = {
         name: result.product.product_name, // assigning values to properties of this object
@@ -25,7 +27,7 @@ export const renderData = (result) => {
         <a href='' class='newProduct'>Scan new product</a>   
     `
 
-    document.querySelector('main section:first-of-type').insertAdjacentHTML('beforeend', markup) // first section in the main gets the information about the product
+    display.insertAdjacentHTML('beforeend', markup) // first section in the main gets the information about the product
 
     document.querySelector('.newProduct').addEventListener('click', () => { window.history.back() })
 }

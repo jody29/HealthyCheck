@@ -3,10 +3,10 @@ import { checkBarcode } from './modules/checkBarcode.js'
 
 const list = document.querySelector('#barcode-list')
 const form = document.forms['checkBarcode']
+const scanButton = document.querySelector('.scanButton')
+const video = document.createElement('video') // create a new video element
+const display = document.querySelector('section:first-of-type')
 
-let scanButton = document.querySelector('.scanButton')
-let video = document.createElement('video') // create a new video element
-let display = document.querySelector('section:first-of-type')
 let itemsFound = []
 
 scanButton.addEventListener('click', () => {
@@ -18,5 +18,4 @@ form.addEventListener('submit', (e) => {
    e.preventDefault()
 
    checkBarcode(itemsFound, video, display, form['barcode'].value, list)
-
 })
