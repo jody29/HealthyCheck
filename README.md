@@ -12,11 +12,8 @@ Design and build a single page app based on a chosen user story.
 ## User story
 As foodie I want to be able to scan products while doing groceries, so I can read more information about the product and make a good choice that fits with my diet.
 
-## Wireflow
-![IMG_7307](https://user-images.githubusercontent.com/66092262/156674257-5c78585a-484a-41a2-b407-cba299484f64.jpg)
-
 ## Activity Diagram
-<img width="651" alt="Schermafbeelding 2022-03-04 om 01 03 45" src="https://user-images.githubusercontent.com/66092262/156674065-ba18b5c6-2e50-4999-acef-3d6eb97a2945.png">
+![activity_diagram_Tekengebied 1](https://user-images.githubusercontent.com/66092262/157266273-4ba19891-a8ec-4e51-a89d-a3d573cc7200.png)
 
 ## License
 MIT
