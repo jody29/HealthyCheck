@@ -1,7 +1,5 @@
 export const renderData = (result, display) => {
 
-    const link = document.querySelector('.newProduct')
-
     const product = {
         name: result.product.product_name, // assigning values to properties of this object
         brand: result.product.brand_owner ? result.product.brand_owner : '',
