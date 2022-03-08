@@ -4,7 +4,7 @@ Healthy Check is an application that lets users scan a barcode of any food/drink
 
 <img src='https://user-images.githubusercontent.com/66092262/157258035-bc2677bb-f63d-4cf2-9cbc-4e98fff2be2c.png'/>
 
-[Click here for the live demo]()
+[Click here for the live demo](https://jody29.github.io/HealthyCheck/spa/)
 
 ## The Assignment
 Design and build a single page app based on a chosen user story.
