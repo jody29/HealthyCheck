@@ -6,6 +6,22 @@ Healthy Check is an application that lets users scan a barcode of any food/drink
 
 [Click here for the live demo](https://jody29.github.io/HealthyCheck/spa/)
 
+## Installation
+open your CLI (windows) or Terminal (Mac)
+
+copy and paste this code
+```bash
+$ git clone https://github.com/jody29/HealthyCheck.git
+```
+open the folder
+```bash
+$ cd HealthyCheck
+```
+open the folder in VScode
+```bash
+$ code .
+```
+
 ## The Assignment
 Design and build a single page app based on a chosen user story.
 
